@@ -39,7 +39,7 @@ POKEMON_LEVEL	EQU	5 ; Assume level 5, like it's a baby Pokémon.
 ITEM_TO_GIVE	EQU 0 ; Assume no item.
 
 SECTION "Give Pokémon Custom", ROM0[$0000]
-givePokemonCustom:	; First TM quantity. $D57E.
+givePokemonCustom: ; First TM quantity. $D57E.
 	ld h, $D0
 	ld l, $04 ; ld hl, $D004
 	ld a, POKEMON_TO_GIVE
