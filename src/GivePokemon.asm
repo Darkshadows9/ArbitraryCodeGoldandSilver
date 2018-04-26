@@ -52,5 +52,5 @@ givePokemonCustom:	; First TM quantity. $D57E.
 	ld [hl], a
 	ld a, $03 ; Bank to call.
 	ld hl, $628E ; Address to call.
-	call $2E27 ; Farcall to subroutine in bank stored in a and address store in hl.
+	call $2E27 ; Farcall to subroutine in bank stored in a and address stored in hl.
 	ret
