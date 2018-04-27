@@ -1,0 +1,117 @@
+To bootstrap this in Pokémon Gold and Silver, first, follow these instructions by Crystal_ until you obtain have a functional memory editor:
+https://www.youtube.com/watch?v=PsIb3OZaYAs
+
+I'll give a summary of the relevant information here.
+We're going to use Coin Case ACE, arbitrary code execution, to bootstrap to TM17 Out of Pocket ACE.
+Since the most consistent method jumps to the first byte of the third Pokémon's defense stat, we need what's known as a "slide" Pokémon.
+The most consistent Pokémon are two trades, Rocky the Onix in Violet City or Muscle the Machop in Goldenrod City.
+You should trade a level 5 Bellsprout for Onix and a level 13 Drowzee for Machop.
+Alternatively, you can try a level 2 female Hoothoot.
+Another option is any level 2 or 3 female Pokémon with HP between 13 and 15, Special Defense of 7, and all other stats between 6 and 7.
+Both of these alternate options have a 60% compatibility rate.
+The slide Pokémon should not have gained any experience, substantial friendship, or used any PP Ups, and it must be fully healed.
+The stats these Pokémon have cause them to fall through to the fourth Pokémon's species, held item, and first move.
+
+The fourth Pokémon should be a Quagsire. Have it hold a TM02 and make sure it knows Return as its first move. It should also know Sleep Talk for later on.
+You can obtain TM02 from Ilex Forest, or from Goldenrod Department Store, if you already got the first one.
+Return can also be obtained from the Goldenrod Department Store on the fifth floor on Sundays by talking to the girl while you have a Pokémon with high friendship.
+TM35 to teach Sleep Talk can be found in the Basement of the Goldenrod Department Store.
+If it's not Sunday, you can use the following link to reset the date and time: https://codepen.io/acarbonaro/full/EjqPQL/
+
+Make sure the item in the top of your item bag is something disposable. It's going to be replaced with TM17.
+
+Next, at Cherrygrove City's Pokémon Center, rename the first six boxes to the following:
+1: A 0 9 'v B é 'm 2
+2: p 'v 9 é G 't . 9
+3: é é 't 'v ♂ é . 2
+4: P pk ♀ p p p 0 'd
+5: é y 't 'm ♀ ♀
+
+Make sure your party is as follows:
+1-2: Any
+3: Slide
+4: Quagsire
+5-6: Any/none
+Make sure Quagsire is holding TM02 with Return as its first move for this execution.
+
+Go to Cherrygrove City's Pokémon Mart and safety save. This is important, so you don't lose everything you've already done, if something goes wrong.
+Exit the Pokémon Mart and take exactly 4 steps to the right, not deviating from that path. If you deviate, go back to view the code in box and continue from there.
+Open Bellsprout or Machop's Pokedex entry, so you hear the sound.
+Go to the bag and switch pockets so that you hear the bag switch sound effect.
+Use the coin case.
+If nothing happened except TM17 has replaced the item in your bag and now you have TM01 and TM09, save the game and reset.
+
+If anything bad happened or you just don't have TM17, double check that all previous steps are correct and restart the process.
+If anything weird/bad happened and you don't have TM17, we have no idea what happened, so I'd suggest resetting before continuing.
+
+When any TM is used out of pocket, the item list looks up an invalid entry. It just so happens that this entry causes us to execute code at FA47, which is echo RAM for DA47.
+This allows the same thing as Coin Case ACE without having to perform specific actions leading up to the execution.
+
+Finally, rename your boxes to the following for the final part of the memory editor:
+2: p 'v a 'v b é ! 2
+3: 'v [ é ? 2 'v 8 5
+4: é 2 2 'v 3 é 0 2
+5: h h h 2 2 2 h h
+6: 's 8 2 h h h é é
+7: 'd 2 G 2 h 'd
+8: 's 0 2 h é , 2 h
+9: 's 0 2 h é / 2 h
+10: 's 0 2 'd
+
+Arrange your party as follows. This will be the default arrangement from now on to use TM17:
+1: Slide
+2: Quagsire
+3-6: Any/none
+Make sure Quagsire is holding TM02 with Return as its first move for this execution.
+
+
+
+Safety save, then use TM17 Out of Pocket.
+If something bad happened, reset the game and double check your party and box names.
+
+With a working memory editor in place, we can finally move on to the main bootstrap.
+It's much easier to edit your TM/HM bag to input code than to.
+To easily do that, we're going to use the memory editor to put some code in the stored box to format our TM's.
+We can use the following Quagsire with the following box names and TM17 to manually enter the code.
+The code is inspired by Spamviech. I stole it and removed some opcodes.
+Some of these items are either unobtainable except by arcane means or not in the quantity required, so it's easier to use the memory editor:
+Quagsire = C3
+Held item = TM09 = $C8
+First move = Return = $D8
+Pokemon2Species: ; wPartyMon2 $DA5A.
+	jp, writeMemory ; (wBoxNames + 8), $D8C8.
+
+Pk♀LM]]		ld $D617, $3E
+Pk♀MM A		ld $D618, $FF
+Pk♀MNDD		ld $D619, $06
+Pk♀NNZZ		ld $D61A, $32
+Pk♀NOQR		ld $D61B, $21
+Pk♀OO?Y		ld $D61C, $7E
+Pk♀OPPk,	ld $D61D, $D5 (That's a Pk symbol near the end.)
+Pk♀PPRR		ld $D61E, $22
+Pk♀PQCD		ld $D61F, $05
+Pk♀QQQQ		ld $D620, $20
+Pk♀QR88		ld $D621, $FC
+Pk♀RR-?		ld $D622, $C9
+
+After that, your stored inventory should be as follows:
+PP Up				x255	; 3E FF
+Teru-Sama($06)	x50		; 06 32
+X Accuracy		x126	; 21 7E
+TM22				x34		; D5 22
+Poké Ball			x32		; 05 20
+Glitch Item($FC)	x201	; FC C9
+
+If it's correct, you should be able to format your TM list to 255 by using this Quagsire:
+Quagsire = C3
+Held item = Thunderstone = $17
+First move = Sleep Talk = $D6
+
+The easiest way to get rid of TM's to enter a program is to sell them at the Pokémon Mart.
+You need to sell (255 - target) items to reach the right amount, be careful not to sell 255 at once.
+Once your code is entered, you'll use the following Quagsire to jump to the first TM and start executing:
+Quagsire = $C3
+Held item = Lucky Egg = $7E
+First move = Attract = $D5
+Pokemon2Species: ; wPartyMon2, $DA5A.
+	jp, wTMsHMs ; $D57E.

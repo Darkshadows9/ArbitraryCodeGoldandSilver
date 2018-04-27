@@ -1,0 +1,28 @@
+﻿Give a single Pokémon at any level holding any item to the player.
+
+TM01 x38	; $26
+TM02 x‭‬208	; $D0
+TM03 x‭46‬	; $2E
+TM04 x‭4		; $04
+TM05 x62	; $3E
+TM06 x‭1		; $01 ; POKEMON_TO_GIVE
+TM07 x119‭‬	; $77
+TM08 x‭46‬	; $2E
+TM09 x64	; $40
+TM10 x‭62‬	; $3E
+TM11 x5		; $05 ; POKEMON_LEVEL
+TM12 x119	; $77
+TM13 x46	; $2E
+TM14 x2		; $02
+TM15 x62	; $3E
+TM16 x0		; $00 ; ITEM_HELD
+TM17 x119	; $77
+TM18 x62	; $3E
+TM19 x3		; $03
+TM20 x33	; $21
+TM21 x142	; $8E
+TM22 x98	; $62
+TM23 x205	; $CD
+TM24 x39	; $27
+TM25 x46	; $2E
+TM26 x201	; $C9

@@ -1,4 +1,4 @@
-#Forces assembly files to be viewed with tabs as four spaces.
-[*.asm]
+#Forces assembly and text files to be viewed with tabs as four spaces.
+[*.{asm,txt}]
 indent_style = tab
 indent_size = 4

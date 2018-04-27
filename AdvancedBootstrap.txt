@@ -1,0 +1,156 @@
+To bootstrap this in Pokémon Gold and Silver, first, follow these instructions by LuckyTyphlosion:
+https://github.com/luckytyphlosion/gs-ace-helper/blob/master/route.txt
+
+I'll give a summary of the relevant information here.
+We're going to use Coin Case ACE, arbitrary code execution, to bootstrap to TM17 Out of Pocket ACE.
+Since the most consistent method jumps to the first byte of the third Pokémon's defense stat, we need what's known as a "slide" Pokémon.
+The most consistent Pokémon are two trades, Rocky the Onix in Violet City or Muscle the Machop in Goldenrod City.
+You should trade a level 5 Bellsprout for Onix and a level 13 Drowzee for Machop.
+Alternatively, you can try a level 2 female Hoothoot.
+Another option is any level 2 or 3 female Pokémon with HP between 13 and 15, Special Defense of 7, and all other stats between 6 and 7.
+Both of these alternate options have a 60% compatibility rate.
+The slide Pokémon should not have gained any experience, substantial friendship, or used any PP Ups, and it must be fully healed.
+The stats these Pokémon have cause them to fall through to the fourth Pokémon's species, held item, and first move.
+
+The fourth Pokémon should be a Quagsire. Have it hold a TM02 and make sure it knows Return as its first move.
+You can obtain TM02 from Ilex Forest, or from Goldenrod Department Store, if you already got the first one.
+Return can also be obtained from the Goldenrod Department Store on the fifth floor on Sundays by talking to the girl while you have a Pokémon with high friendship.
+If it's not Sunday, you can use the following link to reset the date and time: https://codepen.io/acarbonaro/full/EjqPQL/
+
+Make sure the item in the top of your item bag is something disposable. It's going to be replaced with TM17.
+
+Next, at Cherrygrove City's Pokémon Center, rename the first six boxes to the following:
+1: A 0 9 'v B é 'm 2
+2: p 'v 9 é G 't . 9
+3: é é 't 'v ♂ é . 2
+4: P pk ♀ p p p 0 'd
+5: é y 't 'm ♀ ♀
+
+Make sure your party is as follows:
+1-2: Any
+3: Slide
+4: Quagsire
+5-6: Any/none
+Make sure Quagsire is holding TM02 with Return as its first move for this execution.
+
+Go to Cherrygrove City's Pokémon Mart and safety save. This is important, so you don't lose everything you've already done, if something goes wrong.
+Exit the Pokémon Mart and take exactly 4 steps to the right, not deviating from that path. If you deviate, go back to view the code in box and continue from there.
+Open Bellsprout or Machop's Pokedex entry, so you hear the sound.
+Go to the bag and switch pockets so that you hear the bag switch sound effect.
+Use the coin case.
+If nothing happened except TM17 has replaced the item in your bag and now you have TM01 and TM09, save the game and reset.
+
+If anything bad happened or you just don't have TM17, double check that all previous steps are correct and restart the process.
+If anything weird/bad happened and you don't have TM17, we have no idea what happened, so I'd suggest resetting before continuing.
+
+When any TM is used out of pocket, the item list looks up an invalid entry. It just so happens that this entry causes us to execute code at FA47, which is echo RAM for DA47.
+This allows the same thing as Coin Case ACE without having to perform specific actions leading up to the execution.
+
+Now, rename the first 7 boxes to the following:
+1: p 'v b 'v X ♀ 'v 3
+2: é ? 2 'v p é ♂ 2
+3: H 0 n é 5 2 0 9
+4: 'v ; ♀ pk p p 'v 6
+5: 'l x x x 't 4 5 2
+6: 'v 9 x x - 0 . 'l
+7: ♀ 'd
+
+Then, arrange your party as follows. This will be the default arrangement from now on to use TM17:
+1: Slide
+2: Quagsire
+3-6: Any/none
+Make sure Quagsire is holding TM01 with Return as its first move for this execution.
+
+Safety save, then use TM17 Out of Pocket.
+If something bad happened, reset the game and double check your party and box names.
+If a mail entry screen appeared, you're about to have a lot of fun writing letters.
+The first four mail entries have very specific lengths and characters, but everything afterwards is just one long string:
+16: p 'v 9 é A . é I . 'v 9 é [ . 'v 9
+15: é ] . 'v ? é J . 'v 6 é po . 'v 3
+
+16: i i . é S . 'v 8 é P . é Y . 'v )
+
+16: / 'v H P 's O . 's 's 's q 'v 5 ♀ ♀ 8
+15: 8 5 'v A ♀ 'l H H H H H s s s ×			; The × at the end is the multiplication symbol at the bottom right of the input screen.
+
+7: 'v 9 'd x 'm O .
+
+NMJPGNDMBPADBCPL
+INKCHEHIIDIBFOBB
+
+FNBMFNODEABCCECG
+PMBNKBLMPLCBHEBC
+
+PLINNMOHBDBONMNB
+ENCGLGIHOPDOIDBA
+
+JOGODALMAFICPANM
+BOADKCHEKCPEKCHF
+
+KCPFFNDMKBBDLMIF
+FPFNBBFFHMBCBNIN
+
+EMNBENFNFNBBFNBM
+ODEABCCECGPMBNFN
+
+BCFNBMBAAAAAIBKA
+NMGCENCBDBBIPEAD
+
+BAEANMPKHNOHOPAF
+ICEAOPHOACKOFPFN
+
+BCKOPPJHCDAHEFNF
+BCFKDMBAFACMNMND
+
+CDNMBEMBBNBMIDNL
+BOLMAEICHLBOLHFJ
+
+PEKHMJHEBNBPNMBO
+ADKPEMINPBIDKALA
+
+LAIHCBDBJHCBDBDA
+DADMKBBDOHOPOEAM
+
+DCJMAANMGCENHFNM
+GCENPFJMFMNMHDEN
+
+HIHIHIHIHENMHDEN
+GOPAALBMJMNMPKHN
+
+KPPLINLMHGKCIMGM
+KAJM
+
+If the game didn't crash after you're done inputting, save the game.
+We're not done inputting yet. Now, change your box names to the following:
+1: A K E J I A
+2: a 'm / 'v
+
+Have Quagsire holw TM09, save, then use TM17. Then, input the following mail and make sure the checksum is correct:
+MIAA
+checksum: 200
+
+CBPDNGABMCAAMNCD
+MINFCBBNNEABCHAA
+checksum: 1652
+
+MNCDMIGCGLNBBJHM
+OAOJHNOAOKCBDAMI
+checksum: 2324
+
+MDFOAPPAJPPFDOAF
+NHMNOBFCPBOAJPMJ
+checksum: 2567
+
+AJOJPPCFAGFA!
+checksum: 620
+
+If you didn't crash, rename box 1 to the following:
+1: EKEJIA
+
+Save, then use TM17. If the textbox outputs 29544, everything is working properly. Otherwise, repeat the process from the second time you renamed the boxes.
+
+To input the codes in the Mail Codes folder, set the box name to the following:
+1: U(Address)A
+The address should be somewhere in SRAM.
+Then, uss TM17 while Quagsire is holding TM09 and has Return as its first move.
+The entire range between A498-A5FF is empty in SRAM. It's a good space to use, just be aware of the length in memory of every program and where you're writing to.

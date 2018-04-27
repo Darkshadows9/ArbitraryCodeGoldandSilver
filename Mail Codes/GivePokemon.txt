@@ -1,0 +1,19 @@
+﻿Give a single Pokémon at any level holding any item to the player.
+
+Size in memory: 30 bytes
+
+Box 1 name:
+Bootstrap:	Q(Address)A
+Execute:	U(Address)A
+
+C800
+
+26D02E043EXX772E
+403EYY772E023EZZ
+
+773E03218E62CD27
+2EC9!
+
+XX = POKEMON_TO_GIVE
+YY = POKEMON_LEVEL
+ZZ = ITEM_HELD

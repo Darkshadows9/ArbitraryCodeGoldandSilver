@@ -1,0 +1,5 @@
+INCLUDE "Addresses.asm"
+INCLUDE "BasicBootstrap.asm"
+INCLUDE "src\\Shinifier.asm"
+INCLUDE "src\\Perfectifier.asm"
+INCLUDE "src\\GivePokemon.asm"

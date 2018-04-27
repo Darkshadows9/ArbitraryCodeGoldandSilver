@@ -1,0 +1,15 @@
+Make all Pokémon in the currently active box shiny.
+
+Size in memory: 33 bytes
+
+Box 1 name:
+Bootstrap:	Q(Address)A
+Execute:	U(Address)A
+
+C800
+
+AF676F360A264036
+012197AD111F0006
+
+1436FA2336AA1905
+20F75F12C9

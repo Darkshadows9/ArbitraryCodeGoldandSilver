@@ -1,0 +1,3 @@
+rgbasm -o Test//ACE.o Main.asm
+rgblink -l Main.link -o Test//ACE.gbc Test//ACE.o
+rm Test//ACE.o

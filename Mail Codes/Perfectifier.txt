@@ -1,0 +1,18 @@
+Make all Pokemon in the current box "perfect".
+
+Size in memory: 48 bytes
+
+Box 1 name:
+Bootstrap:	Q(Address)A
+Execute:	U(Address)A
+
+C800
+
+AF676F360A264036
+01218DAD16000614
+
+3D0E0A220D20FC36
+FA2336AA1E051922
+
+36151E0F190520E9
+AF5F12C9!

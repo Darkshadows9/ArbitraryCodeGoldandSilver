@@ -1,0 +1,8 @@
+ROM0
+	"Simple Bootstrap"
+	ALIGN 6 ; Align to 64 bytes.
+	"Shinifier Payload"
+	ALIGN 6 ; Align to 64 bytes.
+	"Perfectifier Payload"
+	ALIGN 6 ; Align to 64 bytes.
+	"Give Pokémon Payload"
